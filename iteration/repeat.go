@@ -1,8 +1,6 @@
 package iteration
 
-const repeatTimes = 5
-
-func Repeat(char string) string {
+func Repeat(char string, repeatTimes int) string {
 	var repeated string
 
 	for i := 0; i < repeatTimes; i++ {
