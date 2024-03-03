@@ -21,6 +21,25 @@ func TestSearch(t *testing.T) {
 	})
 }
 
+func TestAdd(t *testing.T) {
+	dictionary := Dictionary{}
+	word := "test"
+	definition := "this is a test"
+
+	dictionary.Add(word, definition)
+}
+
+func asserDefinition(t testing.TB, dictionary Dictionary, word, definition string) {
+	got, err := dictionary.Search(word)
+	want := definition
+
+	if err != nil {
+		t.Fatal("should have find the word:", err)
+	}
+
+	assertStrings(t, got, want)
+}
+
 func assertError(t testing.TB, got, want error) {
 	t.Helper()
 
